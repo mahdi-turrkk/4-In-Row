@@ -8,7 +8,7 @@ public class Board {
     Taw.BLUE = XX
     Taw.RED  = OO
 
-   این کلاس شامل صفحه و مهره های روی آن است
+   this class include bordes and taws
      */
 
     public Taw[][] tawBoard = new Taw[6][7];
@@ -22,16 +22,14 @@ public class Board {
     }
 
     /*
-    برای تغییر دستی یکی از متغیرها حین توسعه استفاده میشد که دو پارامتر اندیس سطر و اندیس ستون و نوع مهره را دریافت میکند
+    to change variables manually
      */
     public void changeValue(int row, int col, Taw taw) {
         tawBoard[row][col] = taw;
     }
 
     /*
-    این متد با مقدار بازگشتی boolean تمامی حالات ممکن وجود 4 مهره در خط عمودی افقی اریب را بررسی میکند و در صورت وجود همچین حالتی مقدار true را برمیگرداند
-    بدیهی است پس از هر حرکت این متد اجرا شود تا مشخص شود بازیکنی که آخرین حرکت را انجام داده است امتیاز گرفته است یا نه
-    امکان آن وجود ندارد بازیکنی که مهره را حرکت نداده است بتواند امتیاز بگیرد
+    check if the game is end or not and return boolean
      */
     public boolean scoreCheck() {
 
@@ -185,8 +183,7 @@ public class Board {
     }
 
     /*
-    این متد با دریافت دو پارامتر که به ترتیب مقدار int مشخص کننده ستون مورد نظر از سمت چپ (مقداری بین 0 و 6) و آبجکتی از Taw که دو مقدار Taw.BLUE و Taw.RED را دارد، مهره مورد نظر را
-    در ستون مورد نظر جایگذاری میکند و در صورتی که ستون مورد نظر پر شده باشد متد مقدار false را برمیگرداند در غیر این صورت مقدار true بازگردانده میشود
+    set bottom row as the taw color
      */
     public boolean putTawBottom(int col, Taw taw) {
         for (int i = 5; i >= 0; i--) {
@@ -199,8 +196,7 @@ public class Board {
     }
 
     /*
-    متد زیر شماره ی اندیس سطر خالی ستونی را برمیگرداند که به عنوان پارامتر به آن داده شده است.
-    در صورتی که مقدار بازگشتی 1- باشد بدین معنا است که این سطر هیچ خانه ی خالی ندارد.
+    return bottom row index to fill that in ui
      */
     public int bottomRowIndex(int col) {
         for (int i = 5; i >= 0; i--) {
@@ -212,7 +208,7 @@ public class Board {
     }
 
     /*
-    این متد برای پرینت گرفتن از صفحه بازی است و بدیهی است که در محصول نهایی نقشی ندارد.
+    printing the board and its not necceserry in final app
      */
 //    public void printArea() {
 //        String template = """
